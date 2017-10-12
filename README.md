@@ -2,6 +2,7 @@
 
 
 This repository contains two Excel macros (FormatZipGrade.bas and eMail.bas) which were written with the intention of improving the user experience when working with Zip Grade (a web/mobile app alternative to Scantron).
+DISCLOSURE: Some code has been taken from online resources. 
 
 What they do:
 - FormatZipGrade.bas converts a "raw" .csv file (as exported from CANVAS) into a .csv file compatible with Zip Grade; this is particularly useful at the time one needs to upload the students' information into ZipGrade. 
