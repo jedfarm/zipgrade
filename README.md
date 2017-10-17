@@ -14,7 +14,7 @@ REQUIREMENTS:
 - eMail.bas requires a .csv file exported using ZipGrade that contains a column called External Id with the emails of the students.
 
 KNOWN LIMITATIONS:
-- Tested only on Windows so far.
+- eMail.bas works only on Windows so far.
 - eMail.bas Tested only for the standard format in Export as .csv (Zipgrade)
 
 How to install:
