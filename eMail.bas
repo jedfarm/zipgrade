@@ -1,8 +1,8 @@
 Attribute VB_Name = "eMail"
 
-Sub Send_Row_Or_Rows_Attachment_2()
+Sub eMail()
 'Working in 2000-2016
-'For Tips see: http://www.rondebruin.nl/win/winmail/Outlook/tips.htm
+'http://www.rondebruin.nl
     Dim OutApp As Object
     Dim OutMail As Outlook.MailItem  ' was Object ###
     Dim rng As Range
@@ -30,6 +30,7 @@ Sub Send_Row_Or_Rows_Attachment_2()
     Dim myAccount As Outlook.Account
     Dim tempAccount As Outlook.Account
     
+    Dim emailSubject As String, emailBody As String
     FoundAccount = False
     
     
@@ -39,12 +40,16 @@ Sub Send_Row_Or_Rows_Attachment_2()
     
    ' ################################ MAKE YOUR EMAIL ACCOUNT PERMANENT HERE  ################################################
     
-    'If you do not want a dialog box asking all the time, set wantDialogBox to FALSE
+    'If you do not want a dialog box asking all the time, set wantDialogBox to False
     'then change strEmail to your email address. ###
     
     wantDialogBox = True
     strEmail = "robinson_crusoe@homealone.com"
     
+    
+    ' If you want to customize the subject and the body of the message, change emailSubject and emailBody correspondingly
+    emailSubject = "Feedback"
+    emailBody = "Hi there. This is your feedback"
     
    '##########################################################################################################################
     
@@ -174,9 +179,9 @@ If FoundAccount Then
                 With OutMail
                     .SendUsingAccount = myAccount
                     .To = Cws.Cells(Rnum, 1).Value
-                    .Subject = "Feedback"
+                    .Subject = emailSubject
                     .Attachments.Add NewWB.FullName
-                    .Body = "Hi there. This is your feedback"
+                    .Body = emailBody
                     .Send  'Use Send for using the app or Display for debugging
                 End With
                 
