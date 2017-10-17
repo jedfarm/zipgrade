@@ -1,7 +1,8 @@
 # zipgrade
 
 This repository contains two Excel macros (FormatZipGrade.bas and eMail.bas) which were written with the intention of improving the user experience when working with Zip Grade (a web/mobile app alternative to Scantron).
-DISCLOSURE: Some code has been taken from resources online. 
+DISCLOSURE: Some code has been taken from resources online and modified at our convenience. 
+
 What they do:
 - FormatZipGrade.bas converts a "raw" .csv file (as exported from CANVAS) into a .csv file compatible with Zip Grade; this is particularly useful at the time one needs to upload the students' information into ZipGrade. 
 - eMail.bas takes a .csv file exported from ZipGrade and sends emails with feedback to each of the students in the file. 
@@ -9,7 +10,10 @@ What they do:
 REQUIREMENTS:
 - Have Microsoft Outlook installed and working on the local machine.
 - In ZipGrade, when entering the students' data, make sure that their emails go in the field External ID.
-- (Tested only on Windows so far).
+
+KNOWN LIMITATIONS:
+- Tested only on Windows so far.
+- eMail.bas Tested only for the standard format in Export as .csv (Zipgrade)
 
 How to install:
 - First, download the repository (as a .zip file) and unzip it into a known location.
@@ -21,3 +25,9 @@ How to install:
 
 How to use:
 In Excel, go to VIEW/Macros and select the one needed.
+
+How to avoid entering the email address repeatedly:
+- Go to the Developer tab and open the Visual Basic Editor
+- In the left panel, double click on the eMail icon. The code will show up in the panel to the right.
+- Scroll down and search for instructions at: ############ MAKE YOUR EMAIL ACCOUNT PERMANENT HERE  ###################
+- Save your changes before leaving.
