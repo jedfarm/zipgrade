@@ -8,8 +8,10 @@ What they do:
 - eMail.bas takes a .csv file exported from ZipGrade and sends emails with feedback to each of the students in the file. 
 
 REQUIREMENTS:
-- Have Microsoft Outlook installed and working on the local machine.
+- Microsoft Outlook installed and working on the local machine with the email account of interest.
 - In ZipGrade, when entering the students' data, make sure that their emails go in the field External ID.
+- FormatZipGrade.bas requires a .csv files as exported by CANVAS
+- eMail.bas requires a .csv file exported using ZipGrade that contains a column called External Id with the emails of the students.
 
 KNOWN LIMITATIONS:
 - Tested only on Windows so far.
@@ -29,5 +31,6 @@ In Excel, go to VIEW/Macros and select the one needed.
 How to avoid entering the email address repeatedly:
 - Go to the Developer tab and open the Visual Basic Editor
 - In the left panel, double click on the eMail icon. The code will show up in the panel to the right.
-- Scroll down and search for instructions at: ############ MAKE YOUR EMAIL ACCOUNT PERMANENT HERE  ###################
+- Scroll down and search for instructions at: 
+############ MAKE YOUR EMAIL ACCOUNT PERMANENT HERE  ###################
 - Save your changes before leaving.
