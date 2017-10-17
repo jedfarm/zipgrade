@@ -9,7 +9,7 @@ What they do:
 
 REQUIREMENTS:
 - Microsoft Outlook installed and working on the local machine with the email account of interest.
-- In ZipGrade, when entering the students' data, make sure that their emails go in the field External ID.
+- In ZipGrade, when entering the students' info, make sure that their emails go in the field External ID.
 - FormatZipGrade.bas requires a .csv files as exported by CANVAS
 - eMail.bas requires a .csv file exported using ZipGrade that contains a column called External Id with the emails of the students.
 
