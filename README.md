@@ -32,5 +32,5 @@ How to avoid entering the email address repeatedly:
 - Go to the Developer tab and open the Visual Basic Editor
 - In the left panel, double click on the eMail icon. The code will show up in the panel to the right.
 - Scroll down and search for instructions at: 
-############ MAKE YOUR EMAIL ACCOUNT PERMANENT HERE  ###################
+######### MAKE YOUR EMAIL ACCOUNT PERMANENT HERE  ###########
 - Save your changes before leaving.
