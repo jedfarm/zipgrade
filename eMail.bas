@@ -3,8 +3,8 @@ Attribute VB_Name = "eMail"
 Sub Send_Row_Or_Rows_Attachment_2()
 'Working in 2000-2016
 'For Tips see: http://www.rondebruin.nl/win/winmail/Outlook/tips.htm
-    Dim outApp As Object
-    Dim OutMail As Object
+    Dim OutApp As Object
+    Dim OutMail As Outlook.MailItem  ' was Object ###
     Dim rng As Range
     Dim Ash As Worksheet
     Dim Cws As Worksheet
@@ -17,41 +17,72 @@ Sub Send_Row_Or_Rows_Attachment_2()
     Dim TempFileName As String
     Dim FileExtStr As String
     Dim FileFormatNum As Long
-'Modified ###
+'Modified or added later###
     Dim lastRow As Long, lastCol As Long
     Dim aCell As Range
-    Dim i As Integer
+    Dim I As Integer
     Dim delRows As Integer
     Dim strEmail As String
-    Dim emailFlag As Boolean
+    Dim FoundAccount As Boolean
     Dim wantDialogBox As Boolean
     
-    'If you do not want a dialog box asking all the time, set wantDialogBox to FALSE and emailFlag to TRUE
-    'then change strEmail to your personal email address. ###
-    strEmail = "robinson_crusoe@homealone.com"
-    emailFlag = False
+    Dim myAccounts As Outlook.Accounts
+    Dim myAccount As Outlook.Account
+    Dim tempAccount As Outlook.Account
+    
+    FoundAccount = False
+    
+    
+    
+    
+    
+    
+   ' ################################ MAKE YOUR EMAIL ACCOUNT PERMANENT HERE  ################################################
+    
+    'If you do not want a dialog box asking all the time, set wantDialogBox to FALSE
+    'then change strEmail to your email address. ###
+    
     wantDialogBox = True
+    strEmail = "robinson_crusoe@homealone.com"
+    
+    
+   '##########################################################################################################################
+    
+    
+    
+    
+    
     
      'Asking for a proper email address ###
      If wantDialogBox Then
         strEmail = InputBox(Prompt:="Enter a valid email address", _
         Title:="ENTER YOUR EMAIL", Default:="robinson_crusoe@homealone.com")
     
-            If strEmail = "robinson_crusoe@homealone.com" Or strEmail = vbNullString Then
-               emailFlag = False
-            Else
-               emailFlag = True
-            End If
+'            If strEmail = "robinson_crusoe@homealone.com" Or strEmail = vbNullString Then
+'               emailFlag = False
+'            Else
+'               emailFlag = True
+'            End If
      End If
      
     On Error GoTo cleanup
-    Set outApp = CreateObject("Outlook.Application")
+    Set OutApp = CreateObject("Outlook.Application")
 
     With Application
         .EnableEvents = False
         .ScreenUpdating = False
     End With
 
+'Find an Outlook account based on from email address  ####
+    Set myAccounts = OutApp.Application.Session.Accounts
+    For Each tempAccount In myAccounts
+        If (tempAccount.SmtpAddress = strEmail) Then
+            Set myAccount = tempAccount
+            FoundAccount = True
+            Exit For
+        End If
+    Next
+If FoundAccount Then
  'Set filter sheet, you can also use Sheets("MySheet")
     Set Ash = ActiveSheet
     
@@ -66,12 +97,12 @@ Sub Send_Row_Or_Rows_Attachment_2()
     
 'Deleting rows that do not contain an email address. Bottom-up because the remaining cells shift up when one is deleted, creating bugs ###
    delRows = 0
-   For i = lastRow To 2 Step -1
-        If Not Ash.Cells(i, aCell.Column).Value Like "?*@?*.?*" Then
-            Rows(i).EntireRow.Delete
+   For I = lastRow To 2 Step -1
+        If Not Ash.Cells(I, aCell.Column).Value Like "?*@?*.?*" Then
+            Rows(I).EntireRow.Delete
             delRows = delRows + 1
         End If
-   Next i
+   Next I
     lastRow = lastRow - delRows
     
     'Set filter range and filter column (column with e-mail addresses) ###Mod###
@@ -131,23 +162,25 @@ Sub Send_Row_Or_Rows_Attachment_2()
                 End If
                 
                 'Save, Mail, Close and Delete the file
-                Set OutMail = outApp.CreateItem(0)
+                
 
                 With NewWB
                     .SaveAs TempFilePath & TempFileName _
                           & FileExtStr, FileFormat:=FileFormatNum
                     On Error Resume Next
-                    With OutMail
-                        If emailFlag Then
-                            .SendUsingAccount = strEmail
-                        End If
-                        .To = Cws.Cells(Rnum, 1).Value
-                        .Subject = "Feedback"
-                        .Attachments.Add NewWB.FullName
-                        .Body = "Hi there. This is your feedback"
-                        .Send  'Or use Send  (Or use Display for debugging)
-                    End With
-                    On Error GoTo 0
+                    
+                    
+                Set OutMail = OutApp.CreateItem(0)
+                With OutMail
+                    .SendUsingAccount = myAccount
+                    .To = Cws.Cells(Rnum, 1).Value
+                    .Subject = "Feedback"
+                    .Attachments.Add NewWB.FullName
+                    .Body = "Hi there. This is your feedback"
+                    .Send  'Use Send for using the app or Display for debugging
+                End With
+                
+On Error GoTo 0
                     .Close savechanges:=False
                 End With
 
@@ -161,8 +194,10 @@ Sub Send_Row_Or_Rows_Attachment_2()
         Next Rnum
     End If
 
+
+
 cleanup:
-    Set outApp = Nothing
+    Set OutApp = Nothing
     Application.DisplayAlerts = False
     Cws.Delete
     Application.DisplayAlerts = True
@@ -171,43 +206,11 @@ cleanup:
         .EnableEvents = True
         .ScreenUpdating = True
     End With
+ 
+ Else
+    MsgBox ("Email account not found")
+End If
+    
 End Sub
-
-
-Public Sub New_Mail()
-Dim outApp As Outlook.Application
-Set outApp = New Outlook.Application
-
-Dim oAccount As Outlook.Account
-Dim oMail As Outlook.MailItem
-For Each oAccount In outApp.Session.Accounts
-   If oAccount = "jfand72@hccfl.edu" Then
-      Set oMail = outApp.CreateItem(olMailItem)
-      oMail.SendUsingAccount = oAccount
-      oMail.Display
-   End If
-Next
-End Sub
-
-
-
-Sub TestInputBox()
-    Dim strName As String
-
-
-
-    strName = InputBox(Prompt:="You name please.", _
-          Title:="ENTER YOUR NAME", Default:="Your Name here")
-
-          
-
-        If strName = "Your Name here" Or _
-           strName = vbNullString Then
-
-           Exit Sub
-
-        Else
-            MsgBox ("Exito!")
-          
-        End If
-End Sub
+                    
+                    
