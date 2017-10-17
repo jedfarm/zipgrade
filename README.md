@@ -9,8 +9,8 @@ What they do:
 
 REQUIREMENTS:
 - Microsoft Outlook installed and working on the local machine with the email account of interest.
-- In ZipGrade, when entering the students' info, make sure that their emails go in the field External ID.
-- FormatZipGrade.bas requires a .csv files as exported by CANVAS
+- In ZipGrade, when entering the students' info, make sure that their emails go in the field: External ID.
+- FormatZipGrade.bas requires a .csv file as exported by CANVAS
 - eMail.bas requires a .csv file exported using ZipGrade that contains a column called External Id with the emails of the students.
 
 KNOWN LIMITATIONS:
@@ -19,7 +19,7 @@ KNOWN LIMITATIONS:
 
 How to install:
 - First, download the repository (as a .zip file) and unzip it into a known location.
-- Go to Excel and record an empty macro (Green bottom ribbon, click the icon next to the word READY). When prompted to save the macro, select to store it in the Personal Macro Workbook. This is important because it will allow installing our macros in that location which is hidden by default.
+- Go to Excel and record an empty macro (Green ribbon at the bottom, click on the icon next to the word READY). When prompted to save the macro, select to store it in the Personal Macro Workbook. This is important because it will allow installing our macros in that location which is hidden by default.
 - Make the Developer tab visible. (Office 2013 and up) Go to FILE/Options/Customize Ribbons and check the box Developer on the panel to the right.
 - Go to the Developer Tab and click on the Visual Basic icon (upper left).  That will open the Visual Basic Editor 
 - At the top left panel, right click on VBA Project(PERSONAL.XLSB)/Modules and select import file in the contextual menu, then navigate to the location where the unzipped repository was saved and select one of the .bas files there. Repeat this step to upload the second one.
@@ -33,4 +33,5 @@ How to avoid entering the email address repeatedly:
 - In the left panel, double click on the eMail icon. The code will show up in the panel to the right.
 - Scroll down and search for instructions at: 
 ######### MAKE YOUR EMAIL ACCOUNT PERMANENT HERE  ###########
+- There it is also explained how to make changes to the subject and the body of the message.
 - Save your changes before leaving.
