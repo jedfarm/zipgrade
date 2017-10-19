@@ -26,11 +26,26 @@ DISCLOSURE: Some code has been taken from resources online and modified at our c
 
 [Imgur Image](https://i.imgur.com/YXLWCuC.png)
 
-- Go to Excel and record an empty macro (Green ribbon at the bottom, click on the icon next to the word READY). When prompted to save the macro, select to store it in the Personal Macro Workbook. This is important because it will allow installing our macros in that location which is hidden by default.
+- Go to Excel and record an empty macro (At the bottom, click on the icon next to the word Ready). 
+
+[Imgur Image](https://i.imgur.com/YXLWCuC.png) 
+
+When prompted to save the macro, select to store it in the Personal Macro Workbook. This is important because it will allow installing our macros in that location which is hidden by default.
+
+[Imgur Image](https://i.imgur.com/QGXl2kg.png)
+
 - Make the Developer tab visible. (Office 2013 and up) Go to FILE/Options/Customize Ribbons and check the box Developer on the panel to the right.
 - Go to the Developer Tab and click on the Visual Basic icon (upper left).  That will open the Visual Basic Editor 
-- At the top left panel, right click on VBA Project(PERSONAL.XLSB)/Modules and select import file in the contextual menu, then navigate to the location where the unzipped repository was saved and select one of the .bas files there. Repeat this step to upload the second one.
-- In the Visual Basic Editor, go to Tools/References and check the box "Microsoft Outlook 16.0 Object Library" (the number could be different depending on the given version of Excel).
+- At the top left panel, right-click on VBA Project(PERSONAL.XLSB)/Modules 
+
+[Imgur Image](https://i.imgur.com/mfjyjKu.png)
+
+- Select import file in the contextual menu, then navigate to the location where the unzipped repository was saved and select one of the .bas files there. Repeat this step to upload the second one.
+- In the Visual Basic Editor, go to Tools/References 
+
+[Imgur Image](https://i.imgur.com/RAM3eZN.png)
+
+and check the box "Microsoft Outlook 16.0 Object Library" (the number could be different depending on the given version of Excel).
 
 ## How to use:
 
