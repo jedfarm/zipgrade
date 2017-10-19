@@ -24,7 +24,7 @@ DISCLOSURE: Some code has been taken from resources online and modified at our c
 
 - First, download the repository (as a .zip file) and unzip it into a known location.
 
-[Imgur](https://i.imgur.com/YXLWCuC.png)
+[Imgur Image](https://i.imgur.com/YXLWCuC.png)
 
 - Go to Excel and record an empty macro (Green ribbon at the bottom, click on the icon next to the word READY). When prompted to save the macro, select to store it in the Personal Macro Workbook. This is important because it will allow installing our macros in that location which is hidden by default.
 - Make the Developer tab visible. (Office 2013 and up) Go to FILE/Options/Customize Ribbons and check the box Developer on the panel to the right.
