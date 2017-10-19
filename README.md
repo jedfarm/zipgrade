@@ -26,14 +26,15 @@ DISCLOSURE: Some code has been taken from resources online and modified at our c
 
 [Imgur Image](https://i.imgur.com/YXLWCuC.png)
 
-- Go to Excel and record an empty macro (At the bottom, click on the icon next to the word Ready). 
+- Go to Excel and record an empty macro: At the bottom, click on the icon next to the word Ready
 
-[Imgur Image](https://i.imgur.com/YXLWCuC.png) 
+[Imgur Image](https://i.imgur.com/7eQNMks.png)
 
-When prompted to save the macro, select to store it in the Personal Macro Workbook. This is important because it will allow installing our macros in that location which is hidden by default.
+- When prompted to save the macro, select to store it in the Personal Macro Workbook. This is important because it will allow installing our macros in that location which is hidden by default.
 
 [Imgur Image](https://i.imgur.com/QGXl2kg.png)
 
+- Then go again to the icon next to "Ready" (by now it has become a square) and click on it to stop recording.
 - Make the Developer tab visible. (Office 2013 and up) Go to FILE/Options/Customize Ribbons and check the box Developer on the panel to the right.
 - Go to the Developer Tab and click on the Visual Basic icon (upper left).  That will open the Visual Basic Editor 
 - At the top left panel, right-click on VBA Project(PERSONAL.XLSB)/Modules 
