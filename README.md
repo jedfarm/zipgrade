@@ -1,4 +1,5 @@
-#ZIPGRADE
+# ZIPGRADE
+
 This repository contains two Excel macros (FormatZipGrade.bas and eMail.bas) which were written with the intention of improving the user experience when working with Zip Grade (a web/mobile app alternative to Scantron).
 DISCLOSURE: Some code has been taken from resources online and modified at our convenience. 
 
