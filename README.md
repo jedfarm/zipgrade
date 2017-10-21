@@ -1,7 +1,6 @@
 # ZIPGRADE
 
 This repository contains two Excel macros (FormatZipGrade.bas and eMail.bas) which were written with the intention of improving the user experience when working with Zip Grade (a web/mobile app alternative to Scantron).
-DISCLOSURE: Some code has been taken from resources online and modified at our convenience. 
 
 ## What they do:
 
@@ -50,7 +49,7 @@ and check the box "Microsoft Outlook 16.0 Object Library" (the number could be d
 
 ## How to use:
 
-In Excel, go to VIEW/Macros and select the one needed.
+With the file of interest already opened in Excel, go to VIEW/Macros and select the one needed.
 
 
 ## Once using it, how to avoid entering the instructor's email address repeatedly:
