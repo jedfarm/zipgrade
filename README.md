@@ -15,7 +15,7 @@ This repository contains three Excel macros which were written with the intentio
 - eMailMacOS.bas does the same for mac, except that for this case the attached file is in .xlsx format
 - RDBMacOutlook.scpt is a script necessary to send emails using Outlook for MacOS.
 
-The two last files are based on [Ron De Bruin](http://www.rondebruin.nl) previously written code.
+The last three files are based on [Ron De Bruin](http://www.rondebruin.nl) previously written code.
 
 ## Requirements:
 
