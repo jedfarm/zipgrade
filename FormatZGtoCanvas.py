@@ -32,6 +32,6 @@ cols_of_interest = ['External Id', 'Num Correct']
 quiz = quiz[cols_of_interest]
 quiz.rename(columns={'Num Correct': quiz_name}, inplace=True)
 
-new_df = roster.merge(quiz, left_on='SIS Login ID', right_on='External Id', how='outer')
+new_df = roster.merge(quiz, left_on='SIS Login ID', right_on='External Id', how='left')
 del new_df['External Id']
 new_df.to_csv(filename_out, encoding='utf-8', index=False)
